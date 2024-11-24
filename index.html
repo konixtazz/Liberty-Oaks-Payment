@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Paiement pour votre article</h1>
+  </header>
+
+  <section id="payment-instructions">
+    <h2>Merci pour votre achat !</h2>
+    <p>Vous avez sélectionné : <strong id="article-name"></strong></p>
+    <p>Prix : <strong id="article-price"></strong>€</p>
+
+    <h3>Instructions de paiement</h3>
+    <ol>
+      <li>Cliquez sur le bouton ci-dessous pour accéder à PayPal.</li>
+      <li>Connectez-vous à votre compte PayPal.</li>
+      <li>Envoyez le montant exact (<strong id="amount"></strong>€) à l'adresse suivante : <strong>tonpaypal@email.com</strong>.</li>
+      <li>Indiquez votre **pseudo** dans les notes de paiement.</li>
+    </ol>
+    <a href="https://www.paypal.com" target="_blank">
+      <button>Payer avec PayPal</button>
+    </a>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Nom du Serveur. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Récupérer les paramètres de l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const article = urlParams.get('article');
+    const prix = urlParams.get('prix');
+
+    // Injecter les données dans la page
+    document.getElementById('article-name').textContent = article.replace('_', ' ');
+    document.getElementById('article-price').textContent = prix;
+    document.getElementById('amount').textContent = prix;
+  </script>
+</body>
+</html>
