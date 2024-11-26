@@ -51,4 +51,25 @@ body {
     background-color: #2a304a;
     color: #fff;
   }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('background.png'); /* Image de fond */
+    background-size: auto; /* Largeur automatique, hauteur agrandie à 150% */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  #site-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: auto;
+  }
+  
+  #shop {
+    padding: 20px;
+  }
   
